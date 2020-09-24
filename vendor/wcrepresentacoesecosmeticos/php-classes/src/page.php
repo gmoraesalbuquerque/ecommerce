@@ -7,6 +7,8 @@ class Page {
 	public $tpl;
 	public $options = [];
 	public $defaults = [
+		"header" => true,
+		"footer" => true,
 		"data"=>[]
 	];
 	public function __construct($opts = array(), $tpl_dir = "/views/"){
@@ -15,11 +17,11 @@ class Page {
 			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
 			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
 			"debug"         => false 
-				);
+		);
 		Tpl::configure( $config );
 		$this->tpl = new Tpl;
 		$this->setData($this->options["data"]);
-		$this->tpl->draw("header");
+		if ($this->options["header"] === true) $this->tpl->draw("header");
 	}
 	private function setData($data = array()){
 		foreach ($data as $key => $value) {
@@ -31,7 +33,7 @@ class Page {
 		return $this->tpl->draw($name, $returnHTML);
 	}
 	public function __destruct(){
-		$this->tpl->draw("footer");
+		if ($this->options["footer"] === true) $this->tpl->draw("footer");
 	}
 
 }
