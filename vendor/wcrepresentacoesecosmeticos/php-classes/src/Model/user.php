@@ -1,5 +1,5 @@
 <?php
-namespace ecommerce\Model;
+namespace wcrepresentacoesecosmeticos\Model;
 use \wcrepresentacoesecosmeticos\DB\Sql;
 use \wcrepresentacoesecosmeticos\Model;
 use \wcrepresentacoesecosmeticos\Mailer;
