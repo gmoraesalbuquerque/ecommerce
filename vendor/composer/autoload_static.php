@@ -4,20 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5
+class ComposerStaticInit8cc1190e744267f532f270db9096627a
 {
-    public static $prefixLengthsPsr4 = array (
-        'w' => 
-        array (
-            'wcrepresentacoesecosmeticos\\' => 28,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'wcrepresentacoesecosmeticos\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/wcrepresentacoesecosmeticos/php-classes/src',
-        ),
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/hcodebr/php-classes/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -51,10 +41,9 @@ class ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit55ccfd33a249ac109d5f5bdd769d02a5::$classMap;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit8cc1190e744267f532f270db9096627a::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit8cc1190e744267f532f270db9096627a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit8cc1190e744267f532f270db9096627a::$classMap;
 
         }, null, ClassLoader::class);
     }
