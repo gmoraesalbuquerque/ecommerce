@@ -7,11 +7,11 @@ class Model {
 		$method = substr($name, 0, 3);
 		$fieldname = substr($name, 3, strlen($name));
 		switch ($method) {
-			case 'get':
-				return $this->values[$fieldname];
+			case "get":
+				return (isset($this->values[$fieldname])) ? $this->values[$fieldname] : NULL;
 				break;
 
-				case 'set':
+				case "set":
 				$this->values[$fieldname] = $args[0];
 				break;
 		}
